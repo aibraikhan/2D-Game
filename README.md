@@ -1,4 +1,4 @@
-H1 2D GAME
+<H1>2D GAME</H1>
 
 
 
