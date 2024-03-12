@@ -1,4 +1,4 @@
-package utilz;
+package src.utilz;
 
 public class Constants {
 
