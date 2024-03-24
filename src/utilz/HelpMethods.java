@@ -1,6 +1,5 @@
 package src.utilz;
 
-import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
 
 import src.main.Game;
