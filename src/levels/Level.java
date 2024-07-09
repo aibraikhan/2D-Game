@@ -2,7 +2,13 @@ package src.levels;
 
 import src.entities.Crabby;
 import src.main.Game;
+import src.objects.Cannon;
+import src.objects.GameContainer;
+import src.objects.Potion;
+import src.objects.Spike;
+import src.utilz.HelpMethods;
 
+import javax.swing.plaf.PanelUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -14,6 +20,10 @@ public class Level {
     private BufferedImage img;
     private int[][] lvlData;
     private ArrayList<Crabby> crabs;
+    private ArrayList<Potion> potions;
+    private ArrayList<GameContainer> containers;
+    private ArrayList<Spike> spikes;
+    private ArrayList<Cannon> cannons;
     private int lvlTilesWide;
     private int maxTilesOffset;
     private int maxLvlOffsetX;
@@ -23,9 +33,30 @@ public class Level {
         this.img = img;
         createLevelData();
         createEnemies();
+        createPotions();
+        createContainers();
+        createSpikes();
+        createCannons();
         calcLvlOffsets();
         calcPlayerSpawn();
     }
+
+    private void createCannons() {
+        cannons = HelpMethods.GetCannons(img);
+    }
+
+    private void createSpikes() {
+        spikes = HelpMethods.GetSpikes(img);
+    }
+
+    private void createContainers() {
+        containers = HelpMethods.GetContainers(img);
+    }
+
+    private void createPotions() {
+        potions = HelpMethods.GetPotions(img);
+    }
+
 
     private void calcPlayerSpawn() {
         playerSpawn = GetPlayerSpawn(img);
@@ -64,6 +95,28 @@ public class Level {
     public Point getPlayerSpawn() {
         return playerSpawn;
     }
+
+    public ArrayList<Potion> getPotions() {
+        return potions;
+    }
+
+    public ArrayList<GameContainer> getContainers() {
+        return containers;
+    }
+
+    public ArrayList<Spike> getSpikes() {
+        return spikes;
+    }
+
+    public ArrayList<Cannon> getCannons() {
+        return cannons;
+    }
+
+
+
+
+
+
 }
 
 
